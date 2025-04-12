@@ -44,3 +44,11 @@ output "server_qa_public_dns" {
   value       = module.nginx_server_qa.server_public_dns
   
 }
+
+terraform {
+  backend "s3" {
+    bucket = "terraform-nginx-4-12-2025"
+    key    = "terraform-project/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
