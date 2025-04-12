@@ -20,7 +20,7 @@ variable "server_name" {
 variable "environment" {
   description = "Environment for the server"
   type        = string
-  default     = "production"
+  default     = "test"
 }
 
 variable "owner" {
