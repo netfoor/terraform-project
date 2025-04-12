@@ -21,3 +21,6 @@ override.tf.json
 
 # Include tfplan files to ignore
 *tfplan*
+
+nginx-server.key.pub
+nginx-server.key
