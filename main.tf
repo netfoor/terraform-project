@@ -10,6 +10,10 @@ resource "aws_instance" "nginx" {
 
   tags = {
     Name = "nginx-instance"
+    Environment = "test"
+    Owner = "Fortino Romero"
+    Team = "devops"
+    Project = "nginx-server"
   }
 
   // user_data is a script that runs on instance startup
@@ -30,6 +34,14 @@ resource "aws_instance" "nginx" {
 resource "aws_key_pair" "nginx-ssh" {
   key_name   = "nginx-ssh"
   public_key = file("nginx-server.key.pub") 
+  
+  tags = {
+    Name = "nginx-ssh"
+    Environment = "test"
+    Owner = "Fortino Romero"
+    Team = "devops"
+    Project = "nginx-server"
+  }
   
 }
 
@@ -60,4 +72,11 @@ resource "aws_security_group" "nginx-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   
+  tags = {
+    Name = "nginx-instance"
+    Environment = "test"
+    Owner = "Fortino Romero"
+    Team = "devops"
+    Project = "nginx-server"
+  }
 }
