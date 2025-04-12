@@ -24,3 +24,6 @@ override.tf.json
 
 nginx-server.key.pub
 nginx-server.key
+
+nginx-server-qa.key.pub
+nginx-server-qa.key

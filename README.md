@@ -1,4 +1,4 @@
-ssh-keygen -t rsa -b 2048 -f 'nginx-server.key' es una buena practica que cada instancia tenga su propia ssh 
+ssh-keygen -t rsa -b 2048 -f 'nginx-server-qa.key' es una buena practica que cada instancia tenga su propia ssh 
 
 
   tags = {

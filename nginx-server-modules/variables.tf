@@ -41,3 +41,9 @@ variable "Project" {
   type        = string
   default     = "nginx-server"
 }
+
+variable "ssh" {
+  description = "Path to the SSH public key file"
+  type        = string
+  default     = "nginx-server.key.pub" # Path to the public key file
+}
