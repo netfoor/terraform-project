@@ -1,4 +1,4 @@
-ssh-keygen -t rsa -b 2048 -f 'nginx-server.key'
+ssh-keygen -t rsa -b 2048 -f 'nginx-server.key' es una buena practica que cada instancia tenga su propia ssh 
 
 
   tags = {
@@ -11,4 +11,4 @@ ssh-keygen -t rsa -b 2048 -f 'nginx-server.key'
 
   curl http://
 
-  shh user@ipaddress -i path/private/key
+  shh user@ipaddress -i path/private/key es 

@@ -5,15 +5,15 @@ provider "aws" {
 }
 
 resource "aws_instance" "nginx" {
-  ami           = "ami-0440d3b780d96b29d" // Amazon Linux 2 AMI
-  instance_type = "t3.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
 
   tags = {
-    Name = "nginx-instance"
-    Environment = "test"
-    Owner = "Fortino Romero"
-    Team = "devops"
-    Project = "nginx-server"
+    Name = "${var.server_name}-instance"
+    Environment = var.environment
+    Owner = var.owner
+    Team = var.Team
+    Project = var.Project
   }
 
   // user_data is a script that runs on instance startup
@@ -32,21 +32,21 @@ resource "aws_instance" "nginx" {
 }
 
 resource "aws_key_pair" "nginx-ssh" {
-  key_name   = "nginx-ssh"
+  key_name   = "${var.server_name}-ssh"
   public_key = file("nginx-server.key.pub") 
   
   tags = {
-    Name = "nginx-ssh"
-    Environment = "test"
-    Owner = "Fortino Romero"
-    Team = "devops"
-    Project = "nginx-server"
+    Name = "${var.server_name}-ssh"
+    Environment = var.environment
+    Owner = var.owner
+    Team = var.Team 
+    Project = var.Project
   }
   
 }
 
 resource "aws_security_group" "nginx-sg" {
-  name        = "nginx-sg"
+  name        = "${var.server_name}-sg"
   description = "Security group for Nginx server"
 
   ingress {
@@ -74,9 +74,9 @@ resource "aws_security_group" "nginx-sg" {
   
   tags = {
     Name = "nginx-instance"
-    Environment = "test"
-    Owner = "Fortino Romero"
-    Team = "devops"
-    Project = "nginx-server"
+    Environment = var.environment
+    Owner = var.owner
+    Team = var.Team
+    Project = var.Project
   }
 }
